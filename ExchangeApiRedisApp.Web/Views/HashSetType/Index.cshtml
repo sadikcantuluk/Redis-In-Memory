@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+@model List<string>
+
+<h1>Index</h1>
+
+<form method="post">
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li>
+                @item <button type="submit" asp-controller="HashSetType" asp-action="Delete" asp-route-name="@item" class="btn btn-danger">Sil</button>
+            </li>
+        }
+    </ul>
+</form>
+
+<a class="btn btn-primary" href="HashSetType/Add">Ekle</a>
